@@ -15,6 +15,7 @@ class kacan{
   zipla(){
  if(this.y == height - this.yukseklik){
  this.hizY = -25;
+ ziplaSes.play();
  }
 }
   egil(){

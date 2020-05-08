@@ -1,6 +1,5 @@
 function keyPressed(){
   if(key == ' ' || key == 'w') {
-  ziplaSes.play();
    kac.zipla();
   }
   if(key == 's') {
