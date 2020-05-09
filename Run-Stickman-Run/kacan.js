@@ -46,7 +46,7 @@ class kacan{
   return collideRectRect(this.x+5,this.y,this.r,this.yukseklik,kovala.x,kovala.y,kovala.r,kovala.yukseklik)
 }
   geritepme(){
-    this.x-=25;
+    this.x-=24;
 }
   show(){
   image(kacanGif, this.x, this.y, this.r, this.yukseklik);

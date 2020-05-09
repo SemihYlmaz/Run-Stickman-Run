@@ -27,7 +27,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth-4, windowHeight-4);
   kac = new kacan();
   frameRate(120);
     kovala.push(new kovalayan());
@@ -38,7 +38,7 @@ function setup() {
 function draw() {
   background(255  );
 
-  image(arkaplan, 0, 0, windowWidth, windowHeight-100);
+image(arkaplan, 0, 0, windowWidth, windowHeight-100);
 
 //Çalı ve Yarasa Oluşturma
   if(random(1) < 0.01){
@@ -82,6 +82,7 @@ function draw() {
 
 //Oyun bitti
     if(kac.hitkovala(k)){
+
       buton.show();
       buton.position(windowWidth/2 - 50 , 120);
       buton.style('background-color', '#1eb4e6');
@@ -98,12 +99,11 @@ function draw() {
       text('Oyun Bitti',windowWidth/2,50);
       text('Puan: ' + score, windowWidth/2, 100);
     pop();
-      buton.mousePressed(reset);
   pop();
+      buton.mousePressed(reset);
       noLoop();
     }
 }
-
 
 //Dinazor Gösterip Hareket
 kac.show();
