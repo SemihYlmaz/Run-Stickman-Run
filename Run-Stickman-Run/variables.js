@@ -8,3 +8,5 @@ let calilar = [];
 let yarasalar = [];
 
 let score=0;
+let buton;
+let boyut=20;

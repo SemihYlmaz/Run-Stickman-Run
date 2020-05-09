@@ -31,6 +31,8 @@ function setup() {
   kac = new kacan();
   frameRate(120);
     kovala.push(new kovalayan());
+  buton = createButton('Yeniden Dene');
+  buton.hide();
 }
 
 function draw() {
@@ -38,8 +40,7 @@ function draw() {
 
   image(arkaplan, 0, 0, windowWidth, windowHeight-100);
 
-//Çalı ve Yarasa Oluşturma // BAKMAK LAZIM
-
+//Çalı ve Yarasa Oluşturma
   if(random(1) < 0.01){
   calilar.push(new cali());
 }
@@ -47,7 +48,7 @@ function draw() {
   if(random(1) < 0.005){
   yarasalar.push(new yarasa());
 }
-//Kovalayan Gösterme
+
 //Yarasa Hareket ve Çarpışma Kontrolü
   for(let y of yarasalar){
     y.hareket();
@@ -55,9 +56,9 @@ function draw() {
   if(kac.hityarasa(y)){
     kac.geritepme();
     y.devam();
-    //noLoop();
   }
 }
+
 //Çalı Hareket ve Çarpışma Kontrolü
   for(let c of calilar){
   c.hareket();
@@ -65,32 +66,56 @@ function draw() {
   if(kac.hitcali(c)){
     kac.geritepme();
     c.devam();
-    //noLoop();
   }
 }
 //Skor
   score+=1;
-  textSize(20);
+
+  textSize(boyut);
   textFont(myFont);
-  let myText = text("Puan: " +score,10,10,400,400);
+  text("Puan: " +score,10,10,400,400);
+
+//Oyun Bitti
   for(let k of kovala){
+//Kovalayan Gösterme
     k.show();
+
+//Oyun bitti
     if(kac.hitkovala(k)){
-      noLoop();
+      buton.show();
+      buton.position(windowWidth/2 - 50 , 120);
+      buton.style('background-color', '#1eb4e6');
+      buton.style('color', '#ffffff')
+
       bitisSes.play();
-      push();
+
+  push();
       textSize(25);
       textFont(myFont);
       textAlign(CENTER);
-      push();
+    push();
       fill(30,180,230);
       text('Oyun Bitti',windowWidth/2,50);
       text('Puan: ' + score, windowWidth/2, 100);
-      pop();
-      pop();
+    pop();
+      buton.mousePressed(reset);
+  pop();
+      noLoop();
     }
-  }
+}
+
+
 //Dinazor Gösterip Hareket
 kac.show();
 kac.hareket();
+}
+
+function reset(){
+  buton.hide();
+  calilar=[];
+  yarasalar=[];
+  kac.x=200;
+  loop();
+  score=0;
+  boyut=20;
 }
