@@ -42,11 +42,20 @@ class kacan{
   hityarasa(yarasalar){
   return collideRectRect(this.x,this.y,this.r,this.yukseklik,yarasalar.x+12,yarasalar.y-yarasalar.r,yarasalar.r,yarasalar.r)
 }
+  hithediye(hediyeler){
+  return collideRectRect(this.x,this.y,this.r,this.yukseklik,hediyeler.x+7,hediyeler.y,hediyeler.r,hediyeler.r)
+}
   hitkovala(kovala){
   return collideRectRect(this.x+5,this.y,this.r,this.yukseklik,kovala.x,kovala.y,kovala.r,kovala.yukseklik)
 }
+
   geritepme(){
-    this.x-=24;
+    this.x-=26;
+}
+  ilerle(){
+    if(this.x<150){
+    this.x+=26;
+  }
 }
   show(){
   image(kacanGif, this.x, this.y, this.r, this.yukseklik);

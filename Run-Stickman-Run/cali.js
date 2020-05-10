@@ -1,16 +1,16 @@
 class cali{
-  constructor(){
-  this.r = 50;
-  this.x = width;
-  this.y = height;
+    constructor(){
+      this.r = 50;
+      this.x = width;
+      this.y = height;
   }
-  hareket(){
-    this.x -= 7;
+    hareket(){
+      this.x -= 7;
   }
-  show(){
-  image(caliresim,this.x,this.y-this.r,this.r,this.r);
+    show(){
+      image(caliresim,this.x,this.y-this.r,this.r,this.r);
   }
-  devam(){
-  this.x = -100;
+    devam(){
+      this.x = -100;
   }
 }

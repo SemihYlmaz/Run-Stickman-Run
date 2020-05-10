@@ -24,29 +24,38 @@ function preload(){
   yarasaresim = loadImage('FotoGif/yarasa.png');
   kacanGif = loadImage('FotoGif/kacan.gif');
   kovalayanGif = loadImage('FotoGif/kovalayan.gif');
+  hediyeresim = loadImage('FotoGif/hediye.png');
 }
 
 function setup() {
   createCanvas(windowWidth-4, windowHeight-4);
-  kac = new kacan();
   frameRate(120);
-    kovala.push(new kovalayan());
+  calistir();
+}
+
+function calistir(){
+  kac = new kacan();
+  kovala.push(new kovalayan());
   buton = createButton('Yeniden Dene');
   buton.hide();
 }
 
 function draw() {
-  background(255  );
+  background(255);
 
-image(arkaplan, 0, 0, windowWidth, windowHeight-100);
+  image(arkaplan, 0, 0, windowWidth, windowHeight-100);
 
 //Çalı ve Yarasa Oluşturma
-  if(random(1) < 0.01){
+  if(random(1) < 0.005){
   calilar.push(new cali());
 }
 
   if(random(1) < 0.005){
   yarasalar.push(new yarasa());
+}
+
+  if(random(1) < 0.001){
+  hediyeler.push(new hediye());
 }
 
 //Yarasa Hareket ve Çarpışma Kontrolü
@@ -66,6 +75,16 @@ image(arkaplan, 0, 0, windowWidth, windowHeight-100);
   if(kac.hitcali(c)){
     kac.geritepme();
     c.devam();
+  }
+}
+
+//Hediye Hareket ve Çarpışma Kontrolü
+  for(let h of hediyeler){
+  h.hareket();
+  h.show();
+  if(kac.hithediye(h)){
+    kac.ilerle();
+    h.devam();
   }
 }
 //Skor

@@ -1,5 +1,4 @@
 class yarasa{
-
   constructor(){
   this.h = 50;
   this.r = 35;
