@@ -29,7 +29,7 @@ function preload(){
 
 function setup() {
   createCanvas(windowWidth-4, windowHeight-4);
-  frameRate(120);
+  frameRate(60);
   calistir();
 }
 
