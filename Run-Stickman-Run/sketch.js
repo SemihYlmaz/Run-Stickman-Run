@@ -46,10 +46,9 @@ function draw() {
   image(arkaplan, 0, 0, windowWidth, windowHeight-100);
 
 //Çalı ve Yarasa Oluşturma
-  if(random(1) < 0.005){
-  calilar.push(new cali());
+    if(random(1) < 0.005){
+    calilar.push(new cali());
 }
-
   if(random(1) < 0.005){
   yarasalar.push(new yarasa());
 }
