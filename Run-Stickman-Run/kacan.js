@@ -53,7 +53,7 @@ class kacan{
     this.x-=26;
 }
   ilerle(){
-    if(this.x<400){
+    if(this.x<300){
     this.x+=26;
   }
 }
