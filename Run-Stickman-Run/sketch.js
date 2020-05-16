@@ -99,8 +99,10 @@ function draw() {
 
       buton.show();
       buton.position(windowWidth/2 - 50 , 120);
+      buton.style('border-color', '#1eb4e6');
       buton.style('background-color', '#1eb4e6');
-      buton.style('color', '#ffffff')
+      buton.style('color', '#ffffff');
+      buton.style('cursor', 'pointer');
 
       bitisSes.play();
 

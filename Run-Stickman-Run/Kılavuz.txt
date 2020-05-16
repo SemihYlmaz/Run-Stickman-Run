@@ -1,0 +1,11 @@
+Amaç:
+Ana karakter, arkasındaki karakterden kaçmaya çalışırken önüne çıkan engellerden kaçıp, yolda bulduğu hediyeleri alıp en yüksek puanı almaya çalışır.
+
+Oynanış:
+'W' ve 'Boşluk' tuşları ile zıplanır, 'S' tuşu ile eğilinir.
+
+Oyun bittiğinde 'Yeniden başla' tuşu ile tekrar oynanabilir.
+
+----------------------------------------------------------------
+
+Yeniden Başla tuşu, çalı, yarasa ve hediyeleri yeniden oluşturur, loop'u aktif eder, skoru sıfırlar ve kendini gizler.
