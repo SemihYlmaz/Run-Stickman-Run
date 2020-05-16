@@ -29,15 +29,11 @@ function preload(){
 
 function setup() {
   createCanvas(windowWidth-4, windowHeight-4);
-  frameRate(60);
-  calistir();
-}
-
-function calistir(){
-  kac = new kacan();
-  kovala.push(new kovalayan());
   buton = createButton('Yeniden Dene');
   buton.hide();
+  kac = new kacan();
+  kovala.push(new kovalayan());
+  frameRate(60);
 }
 
 function draw() {
@@ -57,7 +53,7 @@ function draw() {
   hediyeler.push(new hediye());
 }
 
-//Yarasa Hareket ve Çarpışma Kontrolü
+// Her yarasa için hareket ve çarpışma halinde olaylar
   for(let y of yarasalar){
     y.hareket();
     y.show();
@@ -67,7 +63,7 @@ function draw() {
   }
 }
 
-//Çalı Hareket ve Çarpışma Kontrolü
+// Her çalı için hareket ve çarpışma halinde olaylar
   for(let c of calilar){
   c.hareket();
   c.show();
@@ -77,7 +73,7 @@ function draw() {
   }
 }
 
-//Hediye Hareket ve Çarpışma Kontrolü
+//// Her hediye için hareket ve çarpışma halinde olaylar
   for(let h of hediyeler){
   h.hareket();
   h.show();
@@ -86,19 +82,19 @@ function draw() {
     h.devam();
   }
 }
-//Skor
+
+//Skor yazdırma
   score+=1;
 
-  textSize(boyut);
+  textSize(20);
   textFont(myFont);
   text("Puan: " +score,10,10,400,400);
 
-//Oyun Bitti
+//Kovala elemanı için
   for(let k of kovala){
 //Kovalayan Gösterme
     k.show();
-
-//Oyun bitti
+//Kaçan ve Kovalayan çarpıştığında oyun bitme
     if(kac.hitkovala(k)){
 
       buton.show();
@@ -123,17 +119,17 @@ function draw() {
     }
 }
 
-//Dinazor Gösterip Hareket
+//Ana karakter gösterme ve hareket
 kac.show();
 kac.hareket();
 }
 
 function reset(){
+  //Reset tuşu ile oyunun sıfırlanması
   buton.hide();
   calilar=[];
   yarasalar=[];
   kac.x=200;
   loop();
   score=0;
-  boyut=20;
 }

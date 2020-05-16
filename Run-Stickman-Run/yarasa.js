@@ -11,6 +11,7 @@ class yarasa{
   show(){
   image(yarasaresim,this.x,this.y-this.h,this.r,this.r);
   }
+  //Ana karakter ile çarpışan elemanın ekrandan kaçırılması
   devam(){
   this.x = -100;
   }

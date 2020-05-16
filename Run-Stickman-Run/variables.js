@@ -10,4 +10,3 @@ let hediyeler= [];
 
 let score=0;
 let buton;
-let boyut=20;

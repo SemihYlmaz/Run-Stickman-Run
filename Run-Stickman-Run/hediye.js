@@ -10,6 +10,7 @@ class hediye{
     show(){
       image(hediyeresim,this.x,this.y-this.r,this.r,this.r);
   }
+  //Ana karakter ile çarpışan elemanın ekrandan kaçırılması
     devam(){
       this.x = -100;
   }
