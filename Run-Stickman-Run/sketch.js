@@ -96,7 +96,7 @@ let z = "Puan: " +score;
 //Kaçan ve Kovalayan çarpıştığında oyun bitme
     if(kac.hitkovala(k)){
       z = " ";
-      
+
       buton.show();
       buton.position(windowWidth/2 - 50 , 120);
       buton.style('border-color', '#1eb4e6');
