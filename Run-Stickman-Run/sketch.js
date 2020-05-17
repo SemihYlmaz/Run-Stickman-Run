@@ -83,12 +83,11 @@ function draw() {
   }
 }
 
-//Skor yazdırma
-  score+=1;
-
-  textSize(20);
-  textFont(myFont);
-  text("Puan: " +score,10,10,400,400);
+//Skor Elementleri
+score+=1;
+textSize(20);
+textFont(myFont);
+let z = "Puan: " +score;
 
 //Kovala elemanı için
   for(let k of kovala){
@@ -96,7 +95,8 @@ function draw() {
     k.show();
 //Kaçan ve Kovalayan çarpıştığında oyun bitme
     if(kac.hitkovala(k)){
-
+      z = " ";
+      
       buton.show();
       buton.position(windowWidth/2 - 50 , 120);
       buton.style('border-color', '#1eb4e6');
@@ -120,6 +120,9 @@ function draw() {
       noLoop();
     }
 }
+
+//Skor yazdırma
+text(z,10,10,400,400);
 
 //Ana karakter gösterme ve hareket
 kac.show();

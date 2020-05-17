@@ -9,3 +9,7 @@ Oyun bittiğinde 'Yeniden başla' tuşu ile tekrar oynanabilir.
 ----------------------------------------------------------------
 
 Yeniden Başla tuşu, çalı, yarasa ve hediyeleri yeniden oluşturur, loop'u aktif eder, skoru sıfırlar ve kendini gizler.
+
+----------------------------------------------------------------
+
+Oyundaki yarasa, çalı ve hediye objeleri, 0 ve 1 arasındaki tutulan ondalıklı bir sayının, 0.005 sayısından küçük olduğu durumda oluştuğu için, objeler ortaya random çıkmaktadır.
